@@ -1,0 +1,54 @@
+.stats{
+   margin: 0px 0px;
+   padding-right: 30px;
+   /* border: 1px solid black; */
+}
+.inner-bg{
+    padding: 20px 5px;
+    background-color: white;
+    border-radius: 7px;
+}
+.count{
+    background-image: url("../../../../assets/images/statistics/BG1.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width:100%;
+    box-shadow: 1px 1px 4px grey;
+    padding: 2px;
+    font-size: 9px;
+    color: red;
+    font-weight: bolder;
+}
+.text p{
+    font-size: 13px;
+    font-weight: bolder;
+    color: #52586a;
+}
+.fa-icon{
+    color: red;
+    font-size: 18px;
+    /* padding-top: 20px; */
+}
+.fa-icon-recover{
+    color: #66d1ac;
+    font-size: 18px;
+}
+.text p:last-child{
+    font-size: 22px;
+    font-weight: bolder;
+    color: #333333;
+    /* padding-top: 0px; */
+
+    /* margin-top: -10px; */
+}
+
+.case-graph-total img{
+    margin-left: -25px;
+    margin-top: -10px;
+}
+.case-graph img{
+    margin-left: -25px;
+    /* margin-top: 20px; */
+}

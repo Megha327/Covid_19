@@ -1,0 +1,102 @@
+.container{
+    margin:0px auto;
+    margin-bottom: -20px;
+    /* background-color: violet; */
+    width: 95%;
+}
+.navbar-default{
+    border: none;
+    background-color: white;
+}
+.navbar-collapse .navbar-nav {
+    padding-top: 10px;
+}
+.navbar-brand img{
+    margin-top: -5px;
+}
+.navbar-brand{
+    color: red;
+    font-weight: bolder;
+    font-size: 22px;
+}
+.navbar-collapse .navbar-nav li{
+    margin-left: 50px;
+}
+.navbar-collapse .navbar-nav li a{
+    color: #52586a;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.navbar-collapse .navbar-nav li a:hover{
+    color: red;
+    border-bottom:3px solid  red;
+    padding-left: 0px;
+    padding-right: 0px;
+    transition-duration:1s;
+}
+.navbar-collapse .navbar-nav li .active{
+    color: red;
+    border-bottom:3px solid  red;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .navbar-default{
+        padding-bottom: 10px;
+    }
+    .navbar-header .navbar-toggle{
+        background-color:transparent;
+        border: none;
+        margin-top: 15px;
+    }
+    .navbar-header .navbar-toggle .icon-bar{
+      border: 1px solid red;
+    }
+    .navbar-brand img{
+        margin-top: -5px;
+    }
+    .navbar-brand{
+        color: red;
+        font-weight: bolder;
+        font-size: 22px;
+    }
+    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+        /* border-color: #e7e7e7; */
+        background-color:rgba(230,0,0,0.6);
+        margin-top: 10px;
+    }
+    .navbar-collapse{
+        border-top: 0px;
+    }
+    .navbar-collapse .navbar-nav li{
+        margin-left: 0px;
+    }
+    .navbar-collapse .navbar-nav li a{
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .navbar-collapse .navbar-nav li a:hover{
+        color: red;
+        border-bottom:3px solid  red;
+        transition-duration:1s;
+        background-color: white;
+        width: 98%;
+        margin: 0px auto;
+    }
+    .navbar-collapse .navbar-nav li .active{
+        color: red;
+        border-bottom:3px solid  red;
+        background-color: white;
+        width: 98%;
+        margin: 0px auto;
+    }
+        
+  }
+
+  @media only screen and (max-width: 1000px) {
+       
+  }
