@@ -38,7 +38,7 @@ input{
       margin: 15px 5px 0px 5px;
       padding: 10px 0px 0px 0px;
       border-radius: 5px;
-      box-shadow: 2px 2px 8px grey;
+      box-shadow: 2px 8px 8px #f4f4f6;
   }
   .flag-img{
       width: 25px ;

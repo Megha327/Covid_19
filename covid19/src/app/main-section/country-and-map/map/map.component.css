@@ -1,0 +1,21 @@
+.covid-areas p{
+    font-weight: bolder;
+    font-size: 16px;
+}
+.badge{
+    height: 14px;
+    border-radius: 4px;
+    /* background-color: red; */
+    display: inline-block;
+}
+.most-affacted{
+    background-color: red;
+    margin: 0px 5px 0px 0px;
+}
+.less-affected{
+    background-color: #f5c3c6;
+    margin: 0px 5px 0px 10px;
+}
+.affected-areas p{
+    font-size: 12px;
+}

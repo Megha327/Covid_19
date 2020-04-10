@@ -17,9 +17,8 @@
 .inner-row-col-7{
     background-color: white;
     border-radius: 5px;
-    padding: 15px 30px;
-    height: 
-    200px;
+    padding: 15px;
+    height: 388px;
 }
 
 @media only screen and (max-width: 1000px) {
