@@ -1,12 +1,12 @@
-.container{
+
+ .container{
     margin:0px auto;
-    margin-bottom: -20px;
-    /* background-color: violet; */
-    width: 95%;
-}
+   /* width: 97%; */
+} 
 .navbar-default{
     border: none;
     background-color: white;
+    margin-bottom: 0px;
 }
 .navbar-collapse .navbar-nav {
     padding-top: 10px;
@@ -43,6 +43,7 @@
 
 
 @media only screen and (max-width: 768px) {
+    
     .navbar-default{
         padding-bottom: 10px;
     }

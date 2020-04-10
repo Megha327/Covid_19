@@ -1,10 +1,11 @@
 .stats{
    margin: 0px 0px;
    padding-right: 30px;
+   padding-bottom: 10px;
    /* border: 1px solid black; */
 }
 .inner-bg{
-    padding: 20px 5px;
+    padding: 20px 6px 10px 10px;
     background-color: white;
     border-radius: 7px;
 }
@@ -39,9 +40,6 @@
     font-size: 22px;
     font-weight: bolder;
     color: #333333;
-    /* padding-top: 0px; */
-
-    /* margin-top: -10px; */
 }
 
 .case-graph-total img{
@@ -51,4 +49,57 @@
 .case-graph img{
     margin-left: -25px;
     /* margin-top: 20px; */
+}
+
+
+@media only screen and (max-width: 768px) {
+    .stats{
+        /* margin: 0px 0px; */
+        padding-right: 30px;
+        padding-bottom: 10px;
+        text-align: center
+     }
+     .inner-bg{
+         max-height: 150px;
+         background-color: white;
+         border-radius: 7px;
+         padding-bottom: 10px;
+     }
+     .count{
+         position: relative;
+         top: -20px;
+         left: 35px;
+     }
+     .case-graph-total img{
+         margin-left: 0px;
+         margin-top: 0px;
+     }
+     .case-graph img{
+         margin-left: 0px;
+     }
+     
+}
+
+@media only screen and (min-width: 789px) and (max-width: 1000px ) {
+    .stats{
+        margin: 0px 0px;
+        padding-right: 30px;
+        padding-bottom: 10px;
+        /* border: 1px solid black; */
+     }
+     .inner-bg{
+         padding: 20px 6px 10px 10px;
+         background-color: white;
+         border-radius: 7px;
+     }
+     .case-graph-total img{
+         margin-left: 0px;
+         margin-top: -10px;
+     }
+     .case-graph img{
+         margin-left: 0px;
+     }
+     
+     
+     
 }
