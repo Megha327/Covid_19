@@ -1,0 +1,62 @@
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left: 7px; top: 3px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  40px; }
+.right-addon input { padding-right: 30px; }
+
+input{
+    height: 40px;
+    border-radius:50px;
+    color: black;
+    /* text-align: center; */
+}
+::placeholder {
+    color: #33343d;
+    opacity: 1; /* Firefox */
+  }
+  .country-box{
+       overflow-y: scroll;
+      overflow-x: hidden;
+      /* padding: 0px 5px; */
+      /* margin-right: 15px; */
+  }
+  .country-box .row{
+      /* background-color: blue; */
+      margin: 15px 5px 0px 5px;
+      padding: 10px 0px 0px 0px;
+      border-radius: 5px;
+      box-shadow: 2px 2px 8px grey;
+  }
+  .flag-img{
+      width: 25px ;
+      height: 20px;
+      border-radius: 2px;
+      float: left;
+      margin-right: 10px;
+  }
+  .country-box .row .col-md-10 p{
+      color: #333333;
+      font-weight: bolder;
+  }
+  .country-box .row .col-md-10 p:last-child{
+      font-weight: bold;
+      font-size: 10px;
+      color: #b0b1b2;
+  }
+  .country-box .row .fa-caret-icon{
+    font-size: 24px;
+    color: red;
+  }

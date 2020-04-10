@@ -8,6 +8,7 @@ import { StatisticsComponent } from './main-section/statistics/statistics.compon
 import { StatsComponent } from './main-section/statistics/stats/stats.component';
 import { CountryAndMapComponent } from './main-section/country-and-map/country-and-map.component';
 import { CountriesComponent } from './main-section/country-and-map/countries/countries.component';
+import { MapComponent } from './main-section/country-and-map/map/map.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CountriesComponent } from './main-section/country-and-map/countries/cou
     StatisticsComponent,
     StatsComponent,
     CountryAndMapComponent,
-    CountriesComponent
+    CountriesComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule
