@@ -1,0 +1,53 @@
+.col-md-4  img{
+   margin-top: 15px;
+}
+.btn-update{
+    background-color: #ffe8ea;
+    color: #ff0001;
+    font-weight: bolder;
+}
+.btn-update:hover{
+    background-color: #ff0001;
+    color: #ffe8ea;
+    font-weight: bolder;
+}
+.col-md-8 p{
+    font-weight: bolder;
+    margin-top: 10px;
+}
+.col-md-8 a{
+    color: red;
+    font-size: 12px;
+    text-decoration: none;
+}
+.carousel-indicators{
+    margin-bottom: -50px;
+}
+.carousel{
+    margin-bottom: 10px;
+}
+.carousel-indicators li{
+    background-color: #dddada;
+    width: 8px;
+    height: 8px;
+    margin-left: 5px;
+}
+.carousel-indicators .active{
+    background-color: red;
+    width: 10px;
+    height: 10px;
+}
+@media only screen and (max-width: 786px){
+    .col-md-4{
+        text-align: center;
+        background-color: sandybrown;
+    }
+    .col-md-8{
+        margin-top: 10px;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .carousel-indicators{
+        margin-bottom: -40px;
+    }
+}
