@@ -1,0 +1,35 @@
+.recovvery-text p{
+    font-weight: bolder;
+    font-size: 15px;
+    color: #333333;
+}
+.progress-circle{
+    /* color: red; */
+    border: 40px solid #f4f4f4;
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    color: black;
+    /* padding: 25px; */
+    width: 100px;
+    height: 100px;
+    /* padding: 40px; */
+    padding-top: 30px;
+    padding-left: 18px;
+    padding-right: 73px;
+    padding-bottom: 56px;
+    font-size: 20px;
+}
+.recovvery-text i{
+    font-size: 200px;
+    color: #f4f4f4;
+}
+.recovvery-text p:last-child{
+    font-size: 10px;
+    font-weight: bolder;
+    color: #767676;
+    margin-top: 10px;
+}

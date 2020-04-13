@@ -1,0 +1,12 @@
+
+.inner-row{
+    background-color: white;
+    text-align: center;
+    padding: 10px 0px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+.tweets{
+    text-align: left;
+    padding: 10px;
+}

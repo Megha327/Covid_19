@@ -12,6 +12,9 @@ import { MapComponent } from './main-section/country-and-map/map/map.component';
 import { SpreadAndUpdatesComponent } from './main-section/spread-and-updates/spread-and-updates.component';
 import { SpreadComponent } from './main-section/spread-and-updates/spread/spread.component';
 import { UpdatesComponent } from './main-section/spread-and-updates/updates/updates.component';
+import { RecoveryAndTweetsComponent } from './main-section/recovery-and-tweets/recovery-and-tweets.component';
+import { RecoveryComponent } from './main-section/recovery-and-tweets/recovery/recovery.component';
+import { TweetsComponent } from './main-section/recovery-and-tweets/tweets/tweets.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { UpdatesComponent } from './main-section/spread-and-updates/updates/upda
     MapComponent,
     SpreadAndUpdatesComponent,
     SpreadComponent,
-    UpdatesComponent
+    UpdatesComponent,
+    RecoveryAndTweetsComponent,
+    RecoveryComponent,
+    TweetsComponent
   ],
   imports: [
     BrowserModule
