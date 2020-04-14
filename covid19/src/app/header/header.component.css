@@ -2,6 +2,9 @@
  .container{
     margin:0px auto;
    /* width: 97%; */
+}
+a{
+    text-decoration: none;
 } 
 .navbar-default{
     border: none;
@@ -14,7 +17,7 @@
 .navbar-brand img{
     margin-top: -5px;
 }
-.navbar-brand{
+.navbar-brand a{
     color: red;
     font-weight: bolder;
     font-size: 22px;

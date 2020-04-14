@@ -1,12 +1,14 @@
 <div class="row first-row">
-    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 stats">
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 stats"
+    *ngFor = "let fetchData of fetchStats; let i = index">
         <div class="row inner-bg">
-            <div class="col-md-8 col-sm-8 text ">
-                <p>Total Cases <span class="fa fa-caret-up fa-icon"></span></p> 
-                <p>878,679</p>
+            <div class="col-md-8 col-sm-8 text">
+                <p>{{ fetchData[i].title }} <span class="fa fa-caret-up fa-icon"></span></p> 
+                <p>{{ fetchData[i].count }}</p>
                 
             </div>
-            <div class="col-md-4 col-sm-4">
+            <div class="col-md-4 col-sm-4"
+            *ngIf = "fetchData[i].title == 'Total Cases'">
                 <span class="count">15.80K</span>
                 <span class="case-graph-total">
                 <img src="../../../../assets/images/statistics/Graph.svg"
@@ -14,12 +16,13 @@
             </div>
         </div>
     </div>
+    <!-- <p>{{ fetchStats["Global"]["NewConfirmed"] }}</p> -->
 
-    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 stats">
+    <!-- <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 stats">
         <div class="row inner-bg">
             <div class="col-md-8 col-sm-8 text ">
                 <p>Recovered <span class="fa fa-caret-down fa-icon-recover"></span></p> 
-                <p>147,358</p>
+                <p></p>
                 
             </div>
             <div class="col-md-4 col-sm-4">
@@ -33,7 +36,7 @@
         <div class="row inner-bg">
             <div class="col-md-8 col-sm-8 text ">
                 <p>Active Cases <span class="fa fa-caret-up fa-icon"></span></p> 
-                <p>731,321</p>
+                <p></p>
                 
             </div>
             <div class="col-md-4 col-sm-4">
@@ -48,7 +51,7 @@
         <div class="row inner-bg">
             <div class="col-md-8 col-sm-8 text ">
                 <p>Total Death <span class="fa fa-caret-up fa-icon"></span></p> 
-                <p>47,097</p>
+                <p></p>
                 
             </div>
             <div class="col-md-4 col-sm-4">
@@ -57,6 +60,6 @@
                  alt="graph image"></span>
             </div>
         </div>
-    </div>
+    </div> -->
 
 </div>
