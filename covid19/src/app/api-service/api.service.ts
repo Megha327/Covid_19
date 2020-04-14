@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+// import { interval } from 'rxjs/observable/interval';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -9,8 +10,7 @@ export class ApiService {
 
   constructor(private http:HttpClient) { }
   apiUrl = "https://api.covid19api.com/summary";
-  
-  AllCurrentData = null;
+  // const timeInterval = interval
 
   getData(){
     return this.http.get(this.apiUrl)
@@ -23,5 +23,10 @@ export class ApiService {
       }
       return arr;
     }));
+    // return timer(0, 10000)
+    // .pipe(
+    //    switchMap(_ => this.http.get(this.apiUrl)),
+    //    catchError(error => of(`Bad request: ${error}`))
+    // );
   }
 }

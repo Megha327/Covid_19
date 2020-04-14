@@ -1,65 +1,21 @@
 <div class="row first-row">
     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 stats"
-    *ngFor = "let fetchData of fetchStats; let i = index">
+    *ngFor = "let fetchData of fetchStats">
         <div class="row inner-bg">
             <div class="col-md-8 col-sm-8 text">
-                <p>{{ fetchData[i].title }} <span class="fa fa-caret-up fa-icon"></span></p> 
-                <p>{{ fetchData[i].count }}</p>
+                <p [ngClass] ="{ up: !fetchData.cases, down: fetchData.cases }">{{ fetchData.title }} </p> 
+                <p>{{ fetchData.count }}</p>
                 
             </div>
-            <div class="col-md-4 col-sm-4"
-            *ngIf = "fetchData[i].title == 'Total Cases'">
-                <span class="count">15.80K</span>
+            <div class="col-md-4 col-sm-4">
+                <span *ngIf = "fetchData.title == 'Total Cases'" class="count">15.80K</span>
                 <span class="case-graph-total">
-                <img src="../../../../assets/images/statistics/Graph.svg"
-                 alt="graph image"></span>
+                <img src="{{ fetchData.src }}"
+                 alt="graph image"
+                 [ngClass] = "{img_graph_total: fetchData.title == 'Total Cases', img_graph: fetchData.title != 'Total Cases' }"></span>
             </div>
         </div>
     </div>
-    <!-- <p>{{ fetchStats["Global"]["NewConfirmed"] }}</p> -->
-
-    <!-- <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 stats">
-        <div class="row inner-bg">
-            <div class="col-md-8 col-sm-8 text ">
-                <p>Recovered <span class="fa fa-caret-down fa-icon-recover"></span></p> 
-                <p></p>
-                
-            </div>
-            <div class="col-md-4 col-sm-4">
-                <span class="case-graph">
-                <img src="../../../../assets/images/statistics/Graph2.svg"
-                 alt="graph image"></span>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 stats">
-        <div class="row inner-bg">
-            <div class="col-md-8 col-sm-8 text ">
-                <p>Active Cases <span class="fa fa-caret-up fa-icon"></span></p> 
-                <p></p>
-                
-            </div>
-            <div class="col-md-4 col-sm-4">
-                <span class="case-graph">
-                <img src="../../../../assets/images/statistics/Graph3.svg"
-                 alt="graph image"></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 stats">
-        <div class="row inner-bg">
-            <div class="col-md-8 col-sm-8 text ">
-                <p>Total Death <span class="fa fa-caret-up fa-icon"></span></p> 
-                <p></p>
-                
-            </div>
-            <div class="col-md-4 col-sm-4">
-                <span class="case-graph">
-                <img src="../../../../assets/images/statistics/Graph4.svg"
-                 alt="graph image"></span>
-            </div>
-        </div>
-    </div> -->
-
 </div>
+
+<!-- <span class="fa fa-caret-up fa-icon"></span> -->

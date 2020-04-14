@@ -27,26 +27,63 @@
     font-weight: bolder;
     color: #52586a;
 }
-.fa-icon{
+.up{
+    position: relative;
+}
+.up::after{
+    content: "\f0d8";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+/*--adjust as necessary--*/
+    color: red;
+    font-size: 18px;
+    /* padding-right: 0.5em; */
+    /* position: absolute; */
+    top: 10px;
+    left: 0;
+}
+
+.down{
+    position: relative;
+}
+.down::after{
+    content: "\f0d7";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+/*--adjust as necessary--*/
+    color: #00ddaf;
+    font-size: 18px;
+    /* padding-right: 0.5em; */
+    /* position: absolute; */
+    top: 10px;
+    left: 0;
+}
+
+
+/* .fa-icon{
     color: red;
     font-size: 18px;
     /* padding-top: 20px; */
-}
-.fa-icon-recover{
+/*} */
+/* .fa-icon-recover{
     color: #66d1ac;
     font-size: 18px;
-}
+} */
 .text p:last-child{
     font-size: 22px;
     font-weight: bolder;
     color: #333333;
 }
 
-.case-graph-total img{
+.img_graph_total{
     margin-left: -25px;
     margin-top: -10px;
 }
-.case-graph img{
+.img_graph{
     margin-left: -25px;
     /* margin-top: 20px; */
 }
