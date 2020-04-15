@@ -19,18 +19,18 @@ export class StatsComponent implements OnInit, OnDestroy {
 
   ngOnInit(){
     this.fetchData();
-    // this.resetInterval  = setInterval(() => {
-    //   this.fetchData();
-    // },15000);
+    this.resetInterval  = setInterval(() => {
+      this.fetchData();
+    },15000);
   }
 
   private fetchData(){
-    this.myService.getData().subscribe((data:any) =>{
+    this.myService.getData('Global').subscribe((data:any) =>{
       // console.log(data);
-      this.fetchStats[0]["count"] = data[0]["TotalConfirmed"];
-      this.fetchStats[1]["count"] = data[0]["NewRecovered"];
-      this.fetchStats[2]["count"] = data[0]["TotalConfirmed"] - data[0]["NewRecovered"] - data[0]["TotalDeaths"];
-      this.fetchStats[3]["count"] = data[0]["TotalDeaths"]; 
+      this.fetchStats[0]["count"] = data["TotalConfirmed"];
+      this.fetchStats[1]["count"] = data["NewRecovered"];
+      this.fetchStats[2]["count"] = data["TotalConfirmed"] - data["NewRecovered"] - data["TotalDeaths"];
+      this.fetchStats[3]["count"] = data["TotalDeaths"]; 
       // console.log(this.fetchStats);
     });
   }

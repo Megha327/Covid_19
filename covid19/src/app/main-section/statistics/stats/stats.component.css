@@ -27,24 +27,6 @@
     font-weight: bolder;
     color: #52586a;
 }
-.up{
-    position: relative;
-}
-.up::after{
-    content: "\f0d8";
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-/*--adjust as necessary--*/
-    color: red;
-    font-size: 18px;
-    /* padding-right: 0.5em; */
-    /* position: absolute; */
-    top: 10px;
-    left: 0;
-}
-
 .down{
     position: relative;
 }
@@ -64,15 +46,10 @@
 }
 
 
-/* .fa-icon{
-    color: red;
-    font-size: 18px;
-    /* padding-top: 20px; */
-/*} */
-/* .fa-icon-recover{
-    color: #66d1ac;
-    font-size: 18px;
-} */
+.fa-icon{
+    top: 10px;
+    left: 0;
+}
 .text p:last-child{
     font-size: 22px;
     font-weight: bolder;

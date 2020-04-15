@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+.up{
+    position: relative;
+}
+.up::after{
+    content: "\f0d8";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+/*--adjust as necessary--*/
+    color: red;
+    font-size: 18px;
+}
+
+.down{
+    position: relative;
+}
+.down::after{
+    content: "\f0d7";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+/*--adjust as necessary--*/
+    color: #00ddaf;
+    font-size: 18px;
+}

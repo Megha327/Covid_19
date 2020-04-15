@@ -1,60 +1,30 @@
-<div *ngFor="let a of fetchCountry">
-    {{ a[0] }}
-</div>
+<!-- <div *ngFor="let country of fetchCountry">
+    {{ country['Country'] }}
+    {{ country['TotalConfirmed'] }}
+</div> -->
 <div class="row">
     <form>
         <div class="inner-addon left-addon">
             <i class="glyphicon glyphicon-search"></i>
-            <input type="text" class="form-control" placeholder="Search Location..." />
+            <input type="text" name="search" class="form-control" [(ngModel)] = "searchText"
+           placeholder=" Search Location..." />
         </div>
     </form>
-</div>
+ </div>
+{{ searchText }} 
 <div class="country-box">
-    <div class="row">
+    <div class="row" 
+    *ngFor="let country of fetchCountry | filter : searchText"
+    >
         <div class="col-md-10 col-sm-10 col-xs-10">
-            <img src="../../../../assets/images/country/unitedStaesFlag.jpg" 
+            <img src="https://www.countryflags.io/{{ country['CountryCode'] }}/flat/64.png" 
             class="img-responsive flag-img" alt="unitedFlag">
-            <p></p>
-            <p>158.5K Affected | 47.8K Recovered</p>
+            <p>{{ country['Country'] }}</p>
+            <p>{{ country['TotalConfirmed'] | thousandSufix : 2 }} Affected | {{ country['TotalRecovered'] | thousandSufix : 2  }} Recovered</p>
         </div>
         <div class="col-md-2 col-sm-2 col-xs-2">
-            <i class="fa fa-caret-up fa-caret-icon"></i>
+            <i class="fa-caret-icon"
+            [ngClass] ="{ up: country['Country']!='China', down: country['Country']=='China' }"></i>
         </div>
     </div>
-
-    <!-- <div class="row">
-        <div class="col-md-10 col-sm-10 col-xs-10">
-            <img src="../../../../assets/images/country/unitedStaesFlag.jpg" 
-            class="img-responsive flag-img" alt="unitedFlag">
-            <p>United States</p>
-            <p>158.5K Affected | 47.8K Recovered</p>
-        </div>
-        <div class="col-md-2 col-sm-2 col-xs-2">
-            <i class="fa fa-caret-up fa-caret-icon"></i>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-10 col-sm-10 col-xs-10">
-            <img src="../../../../assets/images/country/unitedStaesFlag.jpg" 
-            class="img-responsive flag-img" alt="unitedFlag">
-            <p>United States</p>
-            <p>158.5K Affected | 47.8K Recovered</p>
-        </div>
-        <div class="col-md-2 col-sm-2 col-xs-2">
-            <i class="fa fa-caret-up fa-caret-icon"></i>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-10 col-sm-10 col-xs-10">
-            <img src="../../../../assets/images/country/unitedStaesFlag.jpg" 
-            class="img-responsive flag-img" alt="unitedFlag">
-            <p>United States</p>
-            <p>158.5K Affected | 47.8K Recovered</p>
-        </div>
-        <div class="col-md-2 col-sm-2 col-xs-2">
-            <i class="fa fa-caret-up fa-caret-icon"></i>
-        </div>
-    </div> -->
 </div>
