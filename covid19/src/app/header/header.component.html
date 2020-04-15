@@ -18,9 +18,11 @@
                 <div class="col-md-8">
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
-                          <li><a routerLink="/dashboard" class="active" >HOME</a></li>
-                          <li><a routerLink="/faq">fAQ</a></li>
-                          <li><a routerLink="/helplink">HELPFUL LINKS</a></li>
+                          <li *ngFor = "let menu of menus; let i = index" 
+                          (click)="select(i)"
+                          [ngClass]="selectedIndex == i ? 'active' : 'none'">
+                            <a routerLink="{{ menu.link }}" >{{ menu.title }}</a>
+                          </li>
                         </ul>
                        </div>
                 </div>

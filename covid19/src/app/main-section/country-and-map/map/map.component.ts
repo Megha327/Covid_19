@@ -56,7 +56,7 @@ export class MapComponent implements OnInit {
 
   private fetchData(){
     this.myService.getData('Countries').subscribe((data:any) =>{
-      console.log(data);
+      // console.log(data);
       this.countriesData = data;
       // console.log(this.fetchCountry[0]["Country"]);
     });

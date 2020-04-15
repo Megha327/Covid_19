@@ -10,6 +10,7 @@ export class HelpLinksComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

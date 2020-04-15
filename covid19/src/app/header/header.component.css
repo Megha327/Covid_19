@@ -1,5 +1,10 @@
 
- .container{
+.active>a {
+    background-color: white !important;
+    color: red !important;
+    border-bottom:3px solid red;
+  }
+.container{
     margin:0px auto;
    /* width: 97%; */
 }
@@ -39,10 +44,11 @@ a{
     padding-right: 0px;
     transition-duration:1s;
 }
-.navbar-collapse .navbar-nav li .active{
+.navbar-collapse .navbar-nav li .active>a{
     color: red;
-    border-bottom:3px solid  red;
+    border-bottom:3px solid red;
 }
+
 
 
 @media only screen and (max-width: 768px) {
