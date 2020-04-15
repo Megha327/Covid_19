@@ -28,8 +28,8 @@ export class StatsComponent implements OnInit, OnDestroy {
     this.myService.getData('Global').subscribe((data:any) =>{
       // console.log(data);
       this.fetchStats[0]["count"] = data["TotalConfirmed"];
-      this.fetchStats[1]["count"] = data["NewRecovered"];
-      this.fetchStats[2]["count"] = data["TotalConfirmed"] - data["NewRecovered"] - data["TotalDeaths"];
+      this.fetchStats[1]["count"] = data["TotalRecovered"];
+      this.fetchStats[2]["count"] = data["TotalConfirmed"] - data["TotalRecovered"] - data["TotalDeaths"];
       this.fetchStats[3]["count"] = data["TotalDeaths"]; 
       // console.log(this.fetchStats);
     });
