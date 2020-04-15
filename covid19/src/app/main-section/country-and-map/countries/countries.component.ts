@@ -7,15 +7,8 @@ import { ApiService } from 'src/app/api-service/api.service';
   styleUrls: ['./countries.component.css']
 })
 export class CountriesComponent implements OnInit, OnDestroy {
-  fetchCountry = [{countryName:'',
-  countryCode:'',
-  slug:'',
-  newConfirmed:0,
-  affacted:0,
-  newDeaths:0,
-  totalDeaths:0,
-  newRecovered:0,
-  recovered:0,
+  fetchCountry = [{countryName:'',countryCode:'',slug:'',newConfirmed:0,
+  affacted:0,newDeaths:0,totalDeaths:0,newRecovered:0,recovered:0,
   date:''}];
   resetInterval;
   constructor(private myService:ApiService) { }
@@ -32,8 +25,8 @@ export class CountriesComponent implements OnInit, OnDestroy {
     this.myService.getData().subscribe((data:any) =>{
       console.log(data[1]);
       this.fetchCountry = data[1];
-      console.log(this.fetchCountry[0].countryName);
-      console.log(data[1][0])
+      console.log(this.fetchCountry[0]['Country']);
+      console.log(this.fetchCountry[0]['CountryCode']);
     });
   }
 

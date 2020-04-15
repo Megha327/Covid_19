@@ -16,6 +16,8 @@ import { UpdatesComponent } from './main-section/spread-and-updates/updates/upda
 import { RecoveryAndTweetsComponent } from './main-section/recovery-and-tweets/recovery-and-tweets.component';
 import { RecoveryComponent } from './main-section/recovery-and-tweets/recovery/recovery.component';
 import { TweetsComponent } from './main-section/recovery-and-tweets/tweets/tweets.component';
+import { HelpLinksComponent } from './help-links/help-links.component';
+import { FaqComponent } from './faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { TweetsComponent } from './main-section/recovery-and-tweets/tweets/tweet
     UpdatesComponent,
     RecoveryAndTweetsComponent,
     RecoveryComponent,
-    TweetsComponent
+    TweetsComponent,
+    HelpLinksComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,
