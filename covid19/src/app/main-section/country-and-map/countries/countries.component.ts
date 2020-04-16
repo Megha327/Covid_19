@@ -8,7 +8,7 @@ import { ApiService } from 'src/app/api-service/api.service';
 })
 export class CountriesComponent implements OnInit, OnDestroy {
   fetchCountry = [];
-  term:string = '';
+  // term:string = '';
   searchText:string = '';
   resetInterval;
   constructor(private myService:ApiService) { }

@@ -4,13 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { FormsModule } from '@angular/forms';
-// import { Routes, RouterModule } from '@angular/router';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
 import { NgCircleProgressModule } from 'ng-circle-progress';
-// import {} from '';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { HeaderComponent } from './header/header.component';
 import { MainSectionComponent } from './main-section/main-section.component';
@@ -25,12 +24,8 @@ import { UpdatesComponent } from './main-section/spread-and-updates/updates/upda
 import { RecoveryAndTweetsComponent } from './main-section/recovery-and-tweets/recovery-and-tweets.component';
 import { RecoveryComponent } from './main-section/recovery-and-tweets/recovery/recovery.component';
 import { TweetsComponent } from './main-section/recovery-and-tweets/tweets/tweets.component';
-// import { HelpLinksComponent } from './help-links/help-links.component';
-// import { FaqComponent } from './faq/faq.component';
 import { ThousandSufixPipe } from './thousand-sufix.pipe';
 import { FilterPipe } from './filter.pipe';
-// import { DashboardComponent } from './dashboard/dashboard.component';
-// import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,13 +42,9 @@ import { FilterPipe } from './filter.pipe';
     RecoveryAndTweetsComponent,
     RecoveryComponent,
     TweetsComponent,
-    // HelpLinksComponent,
-    // FaqComponent,
     ThousandSufixPipe,
     FilterPipe,
     routingComponents
-    // DashboardComponent,
-    // PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

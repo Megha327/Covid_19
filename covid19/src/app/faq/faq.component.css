@@ -1,0 +1,35 @@
+.col-lg-8{
+    padding: 0px 30px;
+}
+h1{
+    background-color: red;
+    padding: 10px 5px;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: -10px;
+    color: white;
+}
+.row-inner{
+    border-bottom: 1px solid red;
+}
+p{
+    /* color: #898686; */
+    color: #575252;
+    line-height: 2.5rem;
+    text-align: justify;
+    font-size: larger;
+    margin: 20px 0px 30px 0px;
+    /* font-weight: bold; */
+}
+h3{
+    color: red;
+    font-weight: bold;
+}
+
+.col-lg-4{
+    padding: 10px 30px 10px 30px;
+}
+.vedio-row{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
