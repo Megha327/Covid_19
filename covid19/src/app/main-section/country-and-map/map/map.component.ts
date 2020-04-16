@@ -1,82 +1,73 @@
-import { Component, OnInit ,Renderer2, Inject} from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Component, OnInit} from '@angular/core';
 import { ApiService } from 'src/app/api-service/api.service';
-// import { NguiMapModule} from '@ngui/map';
-import { google } from '@google/maps';
 
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
-export class MapComponent implements OnInit {
-  //  goggle;
-  constructor(private myService:ApiService, private render2:Renderer2,
-    @Inject(DOCUMENT) private _documnet
-    ) { }
+export class MapComponent implements OnInit {  
+  constructor(private myService:ApiService) { }
+  private intervalHandle: any;
+  public chartConfig = {
+    title: 'Changing Chart',
+    type: 'GeoChart',
+    data: [],
+    columns: ['Countries', 'COVID-19 cases'],
+    options: {
+      animation: {
+        duration: 250,
+        easing: 'ease-in-out',
+        startup: true
+      },
+      colorAxis: { colors: ['#FFC4C6', '#FF979D', '#FF6F7D', '#FF0019'] },
+      backgroundColor: '#f5f5f5',
+      datalessRegionColor: '#f8f9fa',
+      defaultColor: '#6c757d'
+    }
+  };
 
-   countriesData = [];
-   mapData = [['Country', 'TotalConfirmed']];
+  loadingData: boolean = false;
+  errMessage: string = ''
 
   ngOnInit(): void {
-    //this.addScript();
     this.fetchData();
 
   }
-
-  // private addScript(){
-  //   const script = this.render2.createComment('script');
-  //   script.onload = this.loadNextScript.bind(this);
-  //   script.type = 'text/javascript';
-  //   script.text = `
-  //           {
-  //             google.charts.load('current', {
-  //               'packages':['geochart'],
-  //               // Note: you will need to get a mapsApiKey for your project.
-  //               // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-  //               'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
-  //             });
-  //             google.charts.setOnLoadCallback(drawRegionsMap);
-  //           }
-  //       `;
-  //   // script.src = 'https://www.gstatic.com/charts/loader.js';
-  //   script.text = ``;
-  //   this.render2.appendChild(this._documnet.body, script);
-  // }
-
-//   loadNextScript() {
-//     const s = this.render2.createElement('script');
-//     s.text = `
-//     // This would error, if previous script has not yet been loaded
-//      someGlobalObject.doSomething();
-//  `
-//     this.render2.appendChild(this._documnet.body, s);
-//  }
-
-
-  private fetchData(){
+   private fetchData(){
     this.myService.getData('Countries').subscribe((data:any) =>{
-      // console.log(data);
-      this.countriesData = data;
-      // console.log(this.fetchCountry[0]["Country"]);
+      console.log(data);
+      this.chartConfig.data = data;
     });
   }
 
 
-//  drawRegionsMap() {
-//   // google.charts.setOnLoadCallback(drawRegionsMap);
-//       this.countriesData.forEach (function (country, index) {
-//         console.log(country);
-//         this.mapData.push([country["CountryCode"], country["TotalConfirmed"]])
-//       });
-//         console.log(this.mapData);
-//         var data = google.visualization.arrayToDataTable(this.mapData);
+  refreshData() {
+    if(this.chartConfig.data.length === 0)
+      this.loadingData = true;
+    this.myService.getData('Countries')
+      .subscribe(this.updateChartData.bind(this), this.handlerErrorResponse.bind(this));
+  }
 
-//         var options = {colors: ['#FF0000']};
+  updateChartData(data): void {
+    this.loadingData = false;
+    this.chartConfig.data = data;
+  }
 
-//         var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+  handlerErrorResponse(err: ErrorEvent) {
+    if (this.chartConfig.data.length === 0)
+      this.errMessage = 'error occurred, try refreshing page';
+    clearInterval(this.intervalHandle);
+  }
 
-//         chart.draw(data, options);
-//   }
+  chartReady() {
+    this.refreshData();
+    this.intervalHandle = setInterval(this.refreshData.bind(this), 100000);
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.intervalHandle);
+  }
+
 
 }

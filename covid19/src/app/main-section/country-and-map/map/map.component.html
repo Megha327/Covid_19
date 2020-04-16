@@ -8,5 +8,17 @@
     </div>
 </div>
 <div class="row">
-    <p>Map</p>
+    <div class="map">
+        <google-chart
+            [title]="chartConfig.title"
+            [type]="chartConfig.type"
+            [data]="chartConfig.data"
+            [columnNames]="chartConfig.columns"
+            [options]="chartConfig.options"
+            (ready)="chartReady()"    
+        ></google-chart>
+        
+        <covid-loading class="absoluteCenter" [height]="50" [width]=50 *ngIf="loadingData && !errMessage"></covid-loading>
+        <span class="absoluteCenter message" *ngIf="errMessage">{{errMessage}}</span>
+    </div>
 </div>

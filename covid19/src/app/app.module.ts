@@ -9,7 +9,7 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { NgCircleProgressModule } from 'ng-circle-progress';
-// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { GoogleChartsModule } from 'angular-google-charts';
 
 import { HeaderComponent } from './header/header.component';
 import { MainSectionComponent } from './main-section/main-section.component';
@@ -44,7 +44,7 @@ import { FilterPipe } from './filter.pipe';
     TweetsComponent,
     ThousandSufixPipe,
     FilterPipe,
-    routingComponents
+    routingComponents,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +52,7 @@ import { FilterPipe } from './filter.pipe';
     Ng2SearchPipeModule,
     FormsModule,
     AppRoutingModule,
+    GoogleChartsModule.forRoot(),
 
     // Specify ng-circle-progress as an import
     NgCircleProgressModule.forRoot({

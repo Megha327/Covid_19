@@ -9,7 +9,12 @@ export class ApiService {
 
   constructor(private http:HttpClient) { }
   apiUrl = "https://api.covid19api.com/summary";
-  newsApi = "http://newsapi.org/v2/everything?q=Covid&from=2020-04-16&sortBy=popularity&apiKey=c0a9c005b1604269877e6f7e81c31d98";
+  d = new Date();
+  year = this.d.getFullYear();
+  month = this.d.getMonth();
+  day = this.d.getDate();
+  date = this.year+"-"+this.month+"-"+this.day; 
+  newsApi = `http://newsapi.org/v2/everything?q=Covid&from=${this.date}&sortBy=popularity&apiKey=c0a9c005b1604269877e6f7e81c31d98`;
   // const timeInterval = interval
 
   getData(key:string){
@@ -23,6 +28,4 @@ export class ApiService {
     public getNews(){
       return this.http.get(this.newsApi);
     }
-
-
 }
