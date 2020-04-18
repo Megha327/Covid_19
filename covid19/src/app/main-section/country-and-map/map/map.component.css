@@ -19,3 +19,12 @@
 .affected-areas p{
     font-size: 12px;
 }
+
+
+.map-row span{
+    /* background-color: teal; */
+    width: 100%;
+    height: auto;
+    /* margin-left: 30px; */
+    display: inline-block;
+}

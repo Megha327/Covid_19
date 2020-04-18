@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { GoogleChartsModule } from 'angular-google-charts';
+import { ChartModule } from 'angular-highcharts';
 
 import { HeaderComponent } from './header/header.component';
 import { MainSectionComponent } from './main-section/main-section.component';
@@ -53,6 +54,7 @@ import { FilterPipe } from './filter.pipe';
     FormsModule,
     AppRoutingModule,
     GoogleChartsModule.forRoot(),
+    ChartModule,
 
     // Specify ng-circle-progress as an import
     NgCircleProgressModule.forRoot({

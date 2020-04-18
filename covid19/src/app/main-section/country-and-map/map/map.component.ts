@@ -22,11 +22,11 @@ export class MapComponent implements OnInit {
 
       let mapData = [['Country', 'TotalConfirmed']];
       this.countriesData.forEach((country, index) => {
-      console.log("Country: "+country);
+      // console.log("Country: "+country);
       mapData.push([country["CountryCode"], country["TotalConfirmed"]]);
       });
 
-      console.log("mapdata: "+mapData);
+      // console.log("mapdata: "+mapData);
 
       this.data = google.visualization.arrayToDataTable(mapData);
 
