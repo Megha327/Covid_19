@@ -1,8 +1,10 @@
+ 
 .stats{
    margin: 0px 0px;
    padding-right: 30px;
+   /* padding-top: 10px; */
    padding-bottom: 10px;
-   /* border: 1px solid black; */
+   margin: 0px auto;
 }
 .inner-bg{
     padding: 20px 6px 10px 10px;
@@ -71,6 +73,7 @@
         /* margin: 0px 0px; */
         padding-right: 30px;
         padding-bottom: 10px;
+        /* background-color: seagreen; */
         text-align: center
      }
      .inner-bg{
@@ -79,6 +82,10 @@
          border-radius: 7px;
          padding-bottom: 10px;
      }
+     .inner-bg:nth-of-type(2n){
+         background-color: sienna;
+     }
+    
      .count{
          position: relative;
          top: -20px;

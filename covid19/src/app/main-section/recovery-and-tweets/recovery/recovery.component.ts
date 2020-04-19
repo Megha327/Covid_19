@@ -7,7 +7,7 @@ import { ApiService } from 'src/app/api-service/api.service';
   styleUrls: ['./recovery.component.css']
 })
 export class RecoveryComponent implements OnInit {
-  // cases = {confirmed:0, recovered:0,};
+   cases = {confirmed:0, recovered:0,};
   recovered;
   recover:number = 24;
   constructor(private myServivce:ApiService) { }
@@ -19,8 +19,8 @@ export class RecoveryComponent implements OnInit {
   private fetchData(){
     this.myServivce.getData('Global').subscribe((data:any) =>{
       // console.log(data);
-      // this.cases.confirmed = data["TotalConfirmed"];
-      // this.cases.recovered = data["TotalRecovered"];
+       this.cases.confirmed = data["TotalConfirmed"];
+      this.cases.recovered = data["TotalRecovered"];
       this.recovered = (data["TotalRecovered"] * 100)/ data["TotalConfirmed"];
       console.log("type of recovered: "+ typeof this.recovered);
     });

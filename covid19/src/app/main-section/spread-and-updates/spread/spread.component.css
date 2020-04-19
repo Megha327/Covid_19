@@ -33,9 +33,25 @@
     cursor: pointer;
 }
 .active{
-    padding: 0px;
+    /* padding: 0px; */
     color: white !important;
     background-color: #54566d !important;
+    border-radius: 5px;
+}
+.chart-row{
+    position: relative;
+}
+.chart-row .text-span{
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 1;
+    color: red;
+    /* font-weight: bold; */
+    font-size: 12px;
+    margin-left: 10px;
+    /* margin-top: 20px; */
+    padding-top: 20px;
+    /* background-color: royalblue; */
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1000px) {
@@ -66,9 +82,10 @@
         cursor: pointer;
     }
     .active{
-        padding: 0px;
+        /* padding: 0px; */
         color: white !important;
         background-color: #54566d !important;
+       border-radius: 5px;
     }
         
 

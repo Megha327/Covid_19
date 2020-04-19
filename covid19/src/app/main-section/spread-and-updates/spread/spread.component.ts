@@ -13,6 +13,7 @@ export class SpreadComponent implements OnInit {
   totalDeaths = [];
   dates = [];
   activeChart:string ='Confirmed';
+  activeChartLegendData = ['Confirmed'];
   chart;
   activeIndex:number = 0;
   navpills = ["Confirmed","Recovered","Deceased"];
@@ -24,22 +25,31 @@ export class SpreadComponent implements OnInit {
 
   private dateWiseData(){
       this.myService.getDateWiseData().subscribe((data) =>{
-        console.log(data);
-        this.dates = Object.keys(data['cases']);
-        console.log("dates: "+this.dates);
+        // console.log(data);
+        let datesData = Object.keys(data['cases']);
+        datesData.forEach((date) => {
+          this.dates.push(this.formatDate(date));
+        });
+        // console.log("dates: "+this.dates);
         this.totalCase = Object.values(data['cases']);
-        console.log("cases: "+this.totalCase);
+        // console.log("cases: "+this.totalCase);
         this.totalRecoverd = Object.values(data['recovered']);
-        console.log("recovered: "+this.totalRecoverd);
+        // console.log("recovered: "+this.totalRecoverd);
         this.totalDeaths = Object.values(data['deaths']);
-        console.log("deaths: "+this.totalDeaths);
+        // console.log("deaths: "+this.totalDeaths);
 
         this.selectChart(this.activeChart, this.activeIndex);
       })
   }
 
+  private formatDate(date: string) {
+    const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+    let dateArr = date.split("/");
+    return dateArr[1] + " " + months[parseInt(dateArr[0])-1];
+  }
+
    selectChart(value: string, index:number){
-    console.log("selectChart >>>>>>>>>>>>>>>>>>>>>>>>>" + value + " - " + this.activeChart);
+    // console.log("selectChart >>>>>>>>>>>>>>>>>>>>>>>>>" + value + " - " + this.activeChart);
     this.activeIndex = index;
     this.activeChart = value;
     switch(value) {
@@ -56,8 +66,10 @@ export class SpreadComponent implements OnInit {
   }
   
   private callChart(seriesData: any){
+      this.activeChartLegendData = [this.activeChart, this.dates[this.dates.length - 1], seriesData[seriesData.length - 1]];
       this.chart = new Chart( { 
-        chart: { 
+        chart: {
+          height:180, 
           type: 'line' 
         }, 
         title: { 
@@ -70,6 +82,7 @@ export class SpreadComponent implements OnInit {
           categories:this.dates
         }, 
         yAxis: { 
+          // height:10,
           min: 0, 
           title: 
           { 
@@ -87,19 +100,22 @@ export class SpreadComponent implements OnInit {
           gridLineColor: "#ffffff",
           lineWidth:1
         },
-        legend: 
-        { align: 'left', 
-          x: 45, 
-          verticalAlign: 'top', 
-          backgroundColor: 'white', 
-          borderColor: '#CCC', 
-          borderWidth: 1, 
-          shadow: false 
-        },
+        // legend: { 
+        //   align: 'left', 
+        //   x: 45, 
+        //   verticalAlign: 'top', 
+        //   backgroundColor: 'white', 
+        //   borderColor: '#CCC', 
+        //   borderWidth: 1, 
+        //   shadow: false,
+        //   labelFormat: legendData
+        // },
         tooltip: 
         { 
-          // headerFormat: '<b>{point.x}</b><br/>',
-          pointFormat:'{series.name}: {point.y}' 
+          borderColor:'white',
+          backgroundColor:'white',
+          headerFormat: '<span style="color:red">{point.x}</span><br/>',
+          pointFormat:'<span style="color:red">{point.y}</span>' 
         },
         series: 
         [{
@@ -112,7 +128,8 @@ export class SpreadComponent implements OnInit {
             enabled: true,
             radius: 2
           },
-          // showInLegend: false
+          colorKey:'red',
+          showInLegend: false
         }] 
     });
   }

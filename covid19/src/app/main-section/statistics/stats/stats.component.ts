@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api-service/api.service';
 import { interval } from 'rxjs';
 
@@ -7,7 +7,7 @@ import { interval } from 'rxjs';
   templateUrl: './stats.component.html',
   styleUrls: ['./stats.component.css']
 })
-export class StatsComponent implements OnInit, OnDestroy {
+export class StatsComponent implements OnInit {
   fetchStats = [{title:'Total Cases', count:0, src:'../../../../assets/images/statistics/Graph.svg', cases:false},
   {title:"Recovered", count:0, src:'../../../../assets/images/statistics/Graph2.svg', cases:true},
   {title:"Active Cases", count:0, src:'../../../../assets/images/statistics/Graph3.svg', cases:false},
@@ -19,9 +19,7 @@ export class StatsComponent implements OnInit, OnDestroy {
 
   ngOnInit(){
     this.fetchData();
-    this.resetInterval  = setInterval(() => {
-      this.fetchData();
-    },15000);
+   
   }
 
   private fetchData(){
@@ -35,9 +33,7 @@ export class StatsComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy(){
-    // clearInterval(this.resetInterval);
-  }
+
 
 
 }

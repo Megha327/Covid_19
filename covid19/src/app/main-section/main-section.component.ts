@@ -8,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class MainSectionComponent implements OnInit {
 
   constructor() { }
-
+  count = 1;
   ngOnInit(): void {
+    setTimeout(()=> {
+      this.count++;
+      console.log("refreshinng >>> " + this.count);
+      window.location.reload();
+    },60000);
   }
 
 }

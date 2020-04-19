@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { interval } from 'rxjs';
 import { ApiService } from 'src/app/api-service/api.service';
 @Component({
@@ -6,7 +6,7 @@ import { ApiService } from 'src/app/api-service/api.service';
   templateUrl: './countries.component.html',
   styleUrls: ['./countries.component.css']
 })
-export class CountriesComponent implements OnInit, OnDestroy {
+export class CountriesComponent implements OnInit {
   fetchCountry = [];
   searchText:string = '';
   resetInterval;
@@ -14,9 +14,6 @@ export class CountriesComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.fetchData();
-    this.resetInterval  = setInterval(() => {
-      this.fetchData();
-    },15000);
   }
 
 
@@ -24,10 +21,6 @@ export class CountriesComponent implements OnInit, OnDestroy {
     this.myService.getData('Countries').subscribe((data:any) =>{
       this.fetchCountry = data;
     });
-  }
-
-  ngOnDestroy(){
-    clearInterval(this.resetInterval);
   }
 
 

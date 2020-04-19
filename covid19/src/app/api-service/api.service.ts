@@ -9,6 +9,7 @@ export class ApiService {
 
   constructor(private http:HttpClient) { }
   apiUrl = "https://api.covid19api.com/summary";
+  summaryData;
   d = new Date();
   year = this.d.getFullYear();
   month = this.d.getMonth();
@@ -21,7 +22,6 @@ export class ApiService {
   getData(key:string){
     return this.http.get(this.apiUrl)
     .pipe(map(responseData => {
-      // console.log(responseData);
       return responseData[key];
     }));
   }
