@@ -2,25 +2,27 @@
     <p>Ratio of Recovery</p>
     <!-- <i class="fa fa-circle-o" aria-hidden="true"></i> -->
     <!-- <span class="progress-circle">79.8%</span> -->
-  <div *ngIf="recoveredData; else loading">
-    
-      <circle-progress
-      [percent]="recoveredData.recoveredRatio"
-      [radius]="80"
-      [outerStrokeWidth]="5"
-      [innerStrokeWidth]="35"
-      [outerStrokeColor]="'#00c795'"
-      [innerStrokeColor]="'#f5f5f5'"
-      [animation]="true"
-      [animationDuration]="300"
-      [space]="-1"
-      [showUnits]=true
-      [showSubtitle]=false
-    ></circle-progress>
+  <div  class="circle">
+      <div *ngIf="recoveredData; else loading">
+      
+        <circle-progress
+        [percent]="recoveredData.recoveredRatio"
+        [radius]="80"
+        [outerStrokeWidth]="5"
+        [innerStrokeWidth]="35"
+        [outerStrokeColor]="'#00c795'"
+        [innerStrokeColor]="'#f5f5f5'"
+        [animation]="true"
+        [animationDuration]="300"
+        [space]="-1"
+        [showUnits]=true
+        [showSubtitle]=false
+      ></circle-progress>
 
-    <p>{{ recoveredData.confirmed | thousandSufix }} Affected | {{ recoveredData.recovered | thousandSufix }} Recovered</p>
+      <p>{{ recoveredData.confirmed | thousandSufix }} Affected | {{ recoveredData.recovered | thousandSufix }} Recovered</p>
+    </div>
+    <ng-template #loading>
+      <i class="fa fa-spinner fa-spin loading"></i>
+    </ng-template>
   </div>
-  <ng-template #loading>
-    <span>Loading....</span>
-  </ng-template>
 </div>

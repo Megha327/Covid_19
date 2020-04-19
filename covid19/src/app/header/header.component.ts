@@ -15,13 +15,14 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.select(0);
   }
 
-  select(index: number) {
-    console.log(index);
+   select(index: number) {
+    // console.log(index);
       this.selectedIndex = index;
-      console.log("selected Index: "+this.selectedIndex);
-      console.log(this.menus);
+      // console.log("selected Index: "+this.selectedIndex);
+      // console.log(this.menus);
   }
 
 }

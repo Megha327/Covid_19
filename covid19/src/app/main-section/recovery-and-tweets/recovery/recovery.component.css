@@ -3,6 +3,15 @@
     font-size: 15px;
     color: #333333;
 }
+.circle{
+    min-height: 209px;
+    /* background-color: teal; */
+}
+.loading{
+    color: red;
+    font-size: 50px;
+    line-height: 200px;
+}
 .progress-circle{
     /* color: red; */
     border: 40px solid #f4f4f4;
@@ -22,10 +31,6 @@
     padding-right: 73px;
     padding-bottom: 56px;
     font-size: 20px;
-}
-.recovvery-text i{
-    font-size: 200px;
-    color: #f4f4f4;
 }
 .recovvery-text p:last-child{
     font-size: 10px;
