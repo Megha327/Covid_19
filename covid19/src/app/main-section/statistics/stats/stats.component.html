@@ -4,7 +4,7 @@
         <div class="row inner-bg">
             <div class="col-md-8 col-sm-8 text">
                 <p [ngClass] ="{ up: !fetchData.cases, down: fetchData.cases }">{{ fetchData.title }} </p> 
-                <p>{{ fetchData.count }}</p>
+                <p>{{ fetchData.count | number }}</p>
                 
             </div>
             <div class="col-md-4 col-sm-4">
