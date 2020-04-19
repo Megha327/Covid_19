@@ -13,7 +13,7 @@
 </div>
 <div class="country-box">
     <div class="row" 
-    *ngFor="let country of fetchCountry | filter : searchText"
+    *ngFor="let country of countriesData | filter : searchText"
     >
         <div class="col-md-10 col-sm-10 col-xs-10">
             <img src="https://www.countryflags.io/{{ country['CountryCode'] }}/flat/64.png" 

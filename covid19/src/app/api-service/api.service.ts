@@ -19,12 +19,20 @@ export class ApiService {
   dateWiseData = "https://corona.lmao.ninja/v2/historical/all?lastdays=30";
   // const timeInterval = interval
 
-  getData(key:string){
+  // getData(key:string){
+  //   return this.http.get(this.apiUrl)
+  //   .pipe(map(responseData => {
+  //     return responseData[key];
+  //   }));
+  // }
+
+  getData(){
     return this.http.get(this.apiUrl)
     .pipe(map(responseData => {
-      return responseData[key];
+      return responseData;
     }));
   }
+
 
     public getNews(){
       return this.http.get(this.newsApi);

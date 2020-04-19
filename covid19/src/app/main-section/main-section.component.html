@@ -1,10 +1,10 @@
 <div class="row ">
     <div class="col-md-9 right-side">
-        <app-stats></app-stats>
-        <app-country-and-map></app-country-and-map>
+        <app-stats [fetchStats] = stats ></app-stats>
+        <app-country-and-map [countriesData] = countriesData [isMapRendered] = isMapRendered></app-country-and-map>
         <app-spread-and-updates></app-spread-and-updates>
     </div>
     <div class="col-md-3 left-side">
-        <app-recovery-and-tweets></app-recovery-and-tweets>
+        <app-recovery-and-tweets [recoveredData] = recoveredData></app-recovery-and-tweets>
     </div>
 </div>

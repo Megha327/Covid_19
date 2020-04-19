@@ -1,12 +1,12 @@
 <div class="row second-row">
     <div class="col-md-5">
         <div class="inner-row-col5">
-            <app-countries></app-countries>
+            <app-countries [countriesData] = countriesData></app-countries>
         </div>
     </div>
     <div class="col-md-7">
         <div class="row inner-row-col-7">
-            <app-map></app-map>
+            <app-map [countriesData] = countriesData [isMapRendered] = isMapRendered></app-map>
         </div>
     </div>
 </div>
