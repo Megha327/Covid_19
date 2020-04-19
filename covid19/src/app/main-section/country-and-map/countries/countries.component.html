@@ -23,7 +23,8 @@
         </div>
         <div class="col-md-2 col-sm-2 col-xs-2">
             <i class="fa-caret-icon"
-            [ngClass] ="{ up: country['Country']!='China', down: country['Country']=='China' }"></i>
+            [ngClass] ="country['TotalConfirmed'] > 2000 ? 'up':'down' " ></i>
         </div>
     </div>
 </div>
+<!-- [ngClass] ="{ up: country['Country']!='China', down: country['Country']=='China' }" -->
