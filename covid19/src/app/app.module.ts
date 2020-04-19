@@ -14,8 +14,6 @@ import { ChartModule } from 'angular-highcharts';
 
 import { HeaderComponent } from './header/header.component';
 import { MainSectionComponent } from './main-section/main-section.component';
-import { StatisticsComponent } from './main-section/statistics/statistics.component';
-import { StatsComponent } from './main-section/statistics/stats/stats.component';
 import { CountryAndMapComponent } from './main-section/country-and-map/country-and-map.component';
 import { CountriesComponent } from './main-section/country-and-map/countries/countries.component';
 import { MapComponent } from './main-section/country-and-map/map/map.component';
@@ -27,12 +25,12 @@ import { RecoveryComponent } from './main-section/recovery-and-tweets/recovery/r
 import { TweetsComponent } from './main-section/recovery-and-tweets/tweets/tweets.component';
 import { ThousandSufixPipe } from './thousand-sufix.pipe';
 import { FilterPipe } from './filter.pipe';
+import { StatsComponent } from './main-section/stats/stats.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MainSectionComponent,
-    StatisticsComponent,
     StatsComponent,
     CountryAndMapComponent,
     CountriesComponent,
