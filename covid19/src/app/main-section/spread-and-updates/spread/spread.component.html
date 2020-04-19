@@ -11,7 +11,7 @@
         </ul>
     </div>
 </div>
-<div class="row chart-row">
+<div class="row chart-row" *ngIf="isRenderDefault()">
     <div class="text-span">
       <span>{{ activeChartLegendData[0] }}<br></span>
       <span>{{ activeChartLegendData[1] }}<br></span>
@@ -20,4 +20,3 @@
     <div class="chart" [chart]="chart"></div>
 
 </div>
-  

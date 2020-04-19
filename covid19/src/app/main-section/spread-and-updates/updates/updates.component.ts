@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from 'src/app/api-service/api.service';
 // import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
@@ -8,42 +8,36 @@ import { ApiService } from 'src/app/api-service/api.service';
   styleUrls: ['./updates.component.css']
 })
 export class UpdatesComponent implements OnInit {
-  articles;
-  selectedIndex = [];
+  @Input() articles;
+  
   constructor(private newsservice:ApiService) {
    }
 
   ngOnInit(): void {
-    this.getNewsData();
+    // this.getNewsData();
   }
 
-  private getNewsData(){
-    this.newsservice.getNews().subscribe((data) => {
-      // console.log(data["articles"]);
-      data["articles"].forEach((data, index) => { 
-          // console.log(index);
-          
-          this.selectedIndex.push(index);
-      })
-      this.articles = data["articles"];
+  // private getNewsData(){
+  //   this.newsservice.getNews().subscribe((data) => {
+  //     data["articles"].forEach((data, index) => { 
+  //         this.selectedIndex.push(index);
+  //     })
+  //     this.articles = data["articles"];
       
-    })
-  }
+  //   })
+  // }
 
 
-   getIndex(index:number){
-    for(let i =0; i<= this.selectedIndex.length; i++){
-      if(this.selectedIndex.indexOf(this.selectedIndex[i])==index){
-        // console.log(true);
+  getIndex(index:number){
+    let fetchArticleIndex = [0,1,2];
+    for(let i =0; i<= fetchArticleIndex.length; i++){
+      if(fetchArticleIndex[i]==index){
         return "active";
       }
-      else
-      {
-        // console.log(false);
+      else{
         return "none";
       }
     }
-
   }
 
 }

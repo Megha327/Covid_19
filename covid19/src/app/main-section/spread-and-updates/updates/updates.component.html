@@ -2,7 +2,7 @@
     <!-- Indicators -->
     <ol class="carousel-indicators" >
       <li  *ngFor="let article of articles | slice:0:3; let i = index"
-       data-target="#myCarousel" data-slide-to="i" ></li>
+       data-target="#myCarousel" data-slide-to="i" [ngClass] = "getIndex(i)"></li>
     </ol>
 
     <!-- Wrapper for slides -->
