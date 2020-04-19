@@ -13,7 +13,7 @@ export class MainSectionComponent implements OnInit {
     setTimeout(()=> {
       this.count++;
       console.log("refreshinng >>> " + this.count);
-      window.location.reload();
+      // window.location.reload();
     },60000);
   }
 

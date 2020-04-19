@@ -1,9 +1,12 @@
-
+.navbar-header{
+    padding-bottom: 13px;
+}
 .active>a {
     background-color: white !important;
     color: red !important;
     border-bottom:3px solid red;
   }
+
 .container{
     margin:0px auto;
    /* width: 97%; */
@@ -52,7 +55,9 @@ a{
 
 
 @media only screen and (max-width: 768px) {
-    
+    /* .navbar-header{
+        padding-bottom: 13px;
+    } */
     .navbar-default{
         padding-bottom: 10px;
     }
