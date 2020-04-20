@@ -9,9 +9,9 @@ import { ApiService } from '../api-service/api.service';
 export class MainSectionComponent implements OnInit {
 
   constructor( private myService:ApiService) { }
-  summaryApiGlobalData;
-  dateWiseData;
-  newsData;
+  // summaryApiGlobalData;
+  // dateWiseData;
+  // newsData;
   countriesData:[];
   countriesMapData;
   recoveredData;
@@ -32,7 +32,7 @@ export class MainSectionComponent implements OnInit {
     setTimeout(()=> {
       this.count++;
       console.log("refreshinng >>> " + this.count);
-      // this.fetchData();
+      this.fetchData();
     }, 15000);
   }
 
