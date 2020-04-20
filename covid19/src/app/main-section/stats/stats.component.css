@@ -2,7 +2,6 @@
 .stats{
    margin: 0px 0px;
    padding-right: 30px;
-   /* padding-top: 10px; */
    padding-bottom: 10px;
    margin: 0px auto;
 }
@@ -38,11 +37,8 @@
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
-/*--adjust as necessary--*/
     color: #00ddaf;
     font-size: 18px;
-    /* padding-right: 0.5em; */
-    /* position: absolute; */
     top: 10px;
     left: 0;
 }
@@ -64,16 +60,13 @@
 }
 .img_graph{
     margin-left: -25px;
-    /* margin-top: 20px; */
 }
 
 
 @media only screen and (max-width: 768px) {
     .stats{
-        /* margin: 0px 0px; */
         padding-right: 30px;
         padding-bottom: 10px;
-        /* background-color: seagreen; */
         text-align: center
      }
      .inner-bg{
@@ -102,7 +95,6 @@
         margin: 0px 0px;
         padding-right: 30px;
         padding-bottom: 10px;
-        /* border: 1px solid black; */
      }
      .inner-bg{
          padding: 20px 6px 10px 10px;
@@ -115,8 +107,5 @@
      }
      .case-graph img{
          margin-left: 0px;
-     }
-     
-     
-     
+     }     
 }

@@ -5,7 +5,6 @@
 .badge{
     height: 14px;
     border-radius: 4px;
-    /* background-color: red; */
     display: inline-block;
 }
 .most-affacted{
@@ -22,9 +21,7 @@
 
 
 .map-row span{
-    /* background-color: teal; */
     width: 100%;
     height: auto;
-    /* margin-left: 30px; */
     display: inline-block;
 }

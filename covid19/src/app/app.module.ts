@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { ChartModule } from 'angular-highcharts';
+import { NgxSpinnerModule } from "ngx-spinner"; 
 
 import { HeaderComponent } from './header/header.component';
 import { MainSectionComponent } from './main-section/main-section.component';
@@ -53,6 +54,7 @@ import { StatsComponent } from './main-section/stats/stats.component';
     AppRoutingModule,
     GoogleChartsModule.forRoot(),
     ChartModule,
+    NgxSpinnerModule,
 
     // Specify ng-circle-progress as an import
     NgCircleProgressModule.forRoot({

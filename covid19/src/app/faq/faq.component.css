@@ -13,13 +13,11 @@ h1{
     border-bottom: 1px solid red;
 }
 p{
-    /* color: #898686; */
     color: #575252;
     line-height: 2.5rem;
     text-align: justify;
     font-size: larger;
     margin: 20px 0px 30px 0px;
-    /* font-weight: bold; */
 }
 h3{
     color: red;

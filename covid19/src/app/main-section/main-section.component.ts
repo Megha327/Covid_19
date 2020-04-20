@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from '../api-service/api.service';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
  
 @Component({
   selector: 'app-main-section',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class MainSectionComponent implements OnInit {
 
-  constructor( private myService:ApiService, private router:Router) { }
+  constructor( private myService:ApiService, private router:Router, private SpinnerService: NgxSpinnerService) { }
   countriesData:[];
   countriesMapData;
   recoveredData;
@@ -24,9 +25,7 @@ export class MainSectionComponent implements OnInit {
   ];
   articles;
   ngOnInit(): void {
-
-    this.fetchData();
-
+      this.fetchData();
     setInterval(()=>{
       window.location.reload();
       // this.fetchData();
@@ -36,6 +35,7 @@ export class MainSectionComponent implements OnInit {
 
 
   private fetchData(){
+    this.SpinnerService.show();
     this.myService.getData().subscribe((data:any) =>{
       this.stats[0]["count"] = data["Global"]["TotalConfirmed"];
       this.stats[1]["count"] = data["Global"]["TotalRecovered"];
@@ -48,6 +48,7 @@ export class MainSectionComponent implements OnInit {
         "recoveredRatio": (this.stats[1]["count"] * 100)/ this.stats[0]["count"]
       }
       this.isMapRendered = false;
+      this.SpinnerService.hide();
     });
     
     this.myService.getDateWiseData().subscribe((data) =>{

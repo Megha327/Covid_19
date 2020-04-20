@@ -56,8 +56,4 @@ export class TweetsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  getData() {
-    return this.tweets;
-  }
 }

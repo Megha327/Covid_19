@@ -3,30 +3,22 @@
 }
 .col-md-6{
     padding: 0px 15px 0px 0px;
-    /* background-color: violet; */
 }
 .inner-row-col6{
     background-color: white;
     border-radius: 5px;
     padding: 15px 30px;
     min-height: 240px;
-    /* background-color: violet; */
 }
 .col-md-6:last-child{
     padding: 0px 13px 0px 0px;
 }
 
 @media only screen and (max-width: 1000px) {
-    /* .col-md-6{
-        padding: 0px 15px 0px 0px;
-    } */
     .inner-row-col6{
         padding-bottom: 20px;
         padding: 15px;
         margin-bottom: 15px;
         min-height: auto;
     } 
-    /* .col-md-6:last-child{
-        padding: 0px;
-    } */
 }

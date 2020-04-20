@@ -8,9 +8,7 @@
   }
 
 .container{
-    margin:0px auto;
-   /* width: 97%; */
-}
+    margin:0px auto;}
 a{
     text-decoration: none;
 } 
@@ -55,9 +53,6 @@ a{
 
 
 @media only screen and (max-width: 768px) {
-    /* .navbar-header{
-        padding-bottom: 13px;
-    } */
     .navbar-default{
         padding-bottom: 10px;
     }
@@ -78,7 +73,6 @@ a{
         font-size: 22px;
     }
     .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-        /* border-color: #e7e7e7; */
         background-color:rgba(230,0,0,0.6);
         margin-top: 10px;
     }
@@ -110,8 +104,4 @@ a{
         margin: 0px auto;
     }
         
-  }
-
-  @media only screen and (max-width: 1000px) {
-       
   }

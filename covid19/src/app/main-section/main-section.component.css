@@ -1,8 +1,11 @@
 
-
+.spinner{
+    color:white;
+    font-size: 20px;
+    margin-top: 20px;
+}
 @media only screen and (max-width: 1000px) {
     .right-side{
-        /* background-color: violet; */
         padding-right: 0px;
     }
 }

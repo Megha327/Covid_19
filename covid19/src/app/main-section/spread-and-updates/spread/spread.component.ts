@@ -9,10 +9,6 @@ import { ApiService } from 'src/app/api-service/api.service';
 })
 export class SpreadComponent implements OnInit {
   @Input() spreadTrendData;
-  // totalCase = [];
-  // totalRecoverd = [];
-  // totalDeaths = [];
-  // dates = [];
   activeChart:string ='Confirmed';
   activeChartLegendData = ['Confirmed'];
   chart;
@@ -69,7 +65,6 @@ export class SpreadComponent implements OnInit {
           categories:this.spreadTrendData.dates
         }, 
         yAxis: { 
-          // height:10,
           min: 0, 
           title: 
           { 
@@ -87,16 +82,6 @@ export class SpreadComponent implements OnInit {
           gridLineColor: "#ffffff",
           lineWidth:1
         },
-        // legend: { 
-        //   align: 'left', 
-        //   x: 45, 
-        //   verticalAlign: 'top', 
-        //   backgroundColor: 'white', 
-        //   borderColor: '#CCC', 
-        //   borderWidth: 1, 
-        //   shadow: false,
-        //   labelFormat: legendData
-        // },
         tooltip: 
         { 
           borderColor:'white',
