@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from '../api-service/api.service';
-
+import { Router } from '@angular/router';
+ 
 @Component({
   selector: 'app-main-section',
   templateUrl: './main-section.component.html',
@@ -8,10 +9,7 @@ import { ApiService } from '../api-service/api.service';
 })
 export class MainSectionComponent implements OnInit {
 
-  constructor( private myService:ApiService) { }
-  // summaryApiGlobalData;
-  // dateWiseData;
-  // newsData;
+  constructor( private myService:ApiService, private router:Router) { }
   countriesData:[];
   countriesMapData;
   recoveredData;
@@ -25,15 +23,15 @@ export class MainSectionComponent implements OnInit {
     {title:"Total Deaths", count:0, src:`${this.imagePath}Graph4.svg`, cases:false}
   ];
   articles;
-  count = 1;
   ngOnInit(): void {
 
     this.fetchData();
-    setTimeout(()=> {
-      this.count++;
-      console.log("refreshinng >>> " + this.count);
-      this.fetchData();
-    }, 15000);
+
+    setInterval(()=>{
+      window.location.reload();
+      // this.fetchData();
+    },60000)
+  
   }
 
 
@@ -67,11 +65,9 @@ export class MainSectionComponent implements OnInit {
         "totalRecoverd": totalRecoverd,
         "totalDeaths": totalDeaths
       }
-      // this.selectChart(this.activeChart, this.activeIndex);
     })
 
     this.myService.getNews().subscribe((data:any) => {
-      console.log("news data: ",data["articles"]);
       this.articles = data["articles"];
     })
   }

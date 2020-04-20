@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,17 +13,27 @@ export class HeaderComponent implements OnInit {
      {title:'HELPFUL LINKS', link:'/helplink'}
    ];
   selectedIndex: number;
-  constructor() { }
+  constructor(private router:Router) {}
 
   ngOnInit(): void {
-    this.select(0);
+    let url=window.location.pathname;
+    switch(url) {
+      case '/dashboard':
+      case '/':
+        this.select(0);
+        break;
+      case '/faq':
+        this.select(1);
+        break;
+      case '/helplink':
+        this.select(2);
+        break; 
+    }
+
   }
 
    select(index: number) {
-    // console.log(index);
       this.selectedIndex = index;
-      // console.log("selected Index: "+this.selectedIndex);
-      // console.log(this.menus);
   }
 
 }
