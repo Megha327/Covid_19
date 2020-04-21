@@ -13,6 +13,8 @@ import { GoogleChartsModule } from 'angular-google-charts';
 import { ChartModule } from 'angular-highcharts';
 import { NgxSpinnerModule } from "ngx-spinner"; 
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { HeaderComponent } from './header/header.component';
 import { MainSectionComponent } from './main-section/main-section.component';
 import { CountryAndMapComponent } from './main-section/country-and-map/country-and-map.component';
@@ -55,6 +57,7 @@ import { StatsComponent } from './main-section/stats/stats.component';
     GoogleChartsModule.forRoot(),
     ChartModule,
     NgxSpinnerModule,
+    BrowserAnimationsModule,
 
     // Specify ng-circle-progress as an import
     NgCircleProgressModule.forRoot({

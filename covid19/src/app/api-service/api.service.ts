@@ -21,11 +21,13 @@ export class ApiService {
   getData(){
     return this.http.get(this.apiUrl)
     .pipe(map(responseData => {
+      console.log(responseData);
       return responseData;
     }));
   }
 
   public getNews(){
+    console.log(this.http.get(this.newsApi));
     return this.http.get(this.newsApi);
   }
 
